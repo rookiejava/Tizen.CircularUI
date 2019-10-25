@@ -24,6 +24,12 @@
     <ProjectReference Include="..\..\..\src\Tizen.Wearable.CircularUI.Forms.Renderer\Tizen.Wearable.CircularUI.Forms.Renderer.csproj" />
     <ProjectReference Include="..\WearableUIGallery\WearableUIGallery.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <TizenTpkUserIncludeFiles Include="$(SolutionDir)theme\*.edj">
+      <TizenTpkSubDir>res</TizenTpkSubDir>
+    </TizenTpkUserIncludeFiles>
+  </ItemGroup>
   
 
   <!-- Include Nuget Package for Tizen Project building -->

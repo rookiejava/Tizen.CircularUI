@@ -13,12 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
 using System.Diagnostics;
+using System.IO;
 using ElmSharp;
 
 namespace Tizen.Wearable.CircularUI.Forms.Renderer
 {
+    public static class ThemeLoader
+    {
+        public static string AppResourcePath
+        {
+            get;
+            private set;
+        }
+
+        public static bool IsInitialized
+        {
+            get;
+            private set;
+        }
+
+        public static void Initialize(string resourcePath)
+        {
+            if (!IsInitialized)
+            {
+                Elementary.AddThemeOverlay(Path.Combine(resourcePath, "oneui-theme-watch2.edj"));
+                AppResourcePath = resourcePath;
+                IsInitialized = true;
+            }
+        }
+    }
+
     public static class FormsCircularUI
     {
         public static readonly string Tag = "CircularUI";

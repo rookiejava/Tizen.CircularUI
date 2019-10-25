@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using Tizen.Wearable.CircularUI.Forms.Renderer;
 using Xamarin.Forms;
 
@@ -27,6 +26,7 @@ namespace WearableUIGallery.Tizen.Wearable
         protected override void OnCreate()
         {
             base.OnCreate();
+            ThemeLoader.Initialize(DirectoryInfo.Resource);
             LoadApplication(new App());
         }
 
